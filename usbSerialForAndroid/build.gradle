@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 32
+        targetSdkVersion 30
         consumerProguardFiles 'proguard-rules.pro'
         
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -31,6 +31,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'commons-net:commons-net:3.8.0'
     androidTestImplementation 'org.apache.commons:commons-lang3:3.11'
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'androidx.appcompat:appcompat:1.1.0'
 }
 
 // gradle task: publishToMavenLocal
